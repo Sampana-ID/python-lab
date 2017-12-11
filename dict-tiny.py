@@ -10,19 +10,23 @@
 import os
 import sys
 
+sunda = {"makan" : "tuang","saya":"abi"}
+jawa = {"makan" : "dahar","saya":"kula"}
+
 ##bagian menu
 
 def menu():
     menu = 0
-    while(menu != 6) :
+    while(menu != 7) :
         print("""
                 =========MENU=======
                 1. Indonesia - Sunda
                 2. Sunda - Indonesia
                 3. Jawa - Indonesia
                 4. Indonesia - Jawa
-                5. About
-                6. Keluar
+                5. Tambah data
+                6. About
+                7. Keluar
                 """)
         menu = int(input("masukan menu yang anda inginkan : "))
         arah(menu)
@@ -43,9 +47,12 @@ def arah(menu):
         translate("indo","jawa")
         
     elif (menu == 5) :
+        tambah()
+
+    elif (menu == 6) :
         about()
 
-    elif (menu > 6) or (menu < 1) :
+    elif (menu > 7) or (menu < 1) :
         print("masukan anda salah")
         menu()
 
@@ -59,11 +66,31 @@ def about():
             translator
         """)
 
+##tambah data
+def tambah() :
+    print("""
+            ==============INPUT DATA===========
+            1. Indo - Sunda
+            2. Indo - Jawa
+          """)
+    bahasa = int(input("masukan bahasa (sesuai urutan)"))
+    batas = int(input("berapa data yang ingin diinputkan"))
+    if (bahasa == 1) :
+        tambah_data("indo","sunda",batas)
+    elif (bahas == 2) :
+        tambah_data("indo","jawa",batas)
+        
+def tambah_data(awal,akhir,batas):
+    for i in range(1,batas) :
+        ky = input("masukan kata ("+awal+") : ")
+        val = input("masukan kata ("+akhir+") : ")
+        akhir[ky] = val
+        print("data ditambahkan : "+awal+" berarti "+akhir)
+    print("penginputan data selesai")
 ##translate menu
     
 def translate(awal, akhir) :
-    sunda = {"makan" : "tuang","saya":"abi"}
-    jawa = {"makan" : "dahar","saya":"kula"}
+
     
     frase = input("masukan kalimat : ")
     arrayfrase = frase.split(" ")
