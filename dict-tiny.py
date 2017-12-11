@@ -44,9 +44,11 @@ def arah(menu):
         
     elif (menu == 5) :
         about()
+
     elif (menu > 6) or (menu < 1) :
         print("masukan anda salah")
         menu()
+
 ##about menu
 
 def about():
