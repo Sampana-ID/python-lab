@@ -10,6 +10,8 @@
 import os
 import sys
 
+##bagian menu
+
 def menu():
     menu = 0
     while(menu != 6) :
@@ -24,6 +26,8 @@ def menu():
                 """)
         menu = int(input("masukan menu yang anda inginkan : "))
         arah(menu)
+
+##pengarahan menu
 
 def arah(menu):
     if (menu == 1) :
@@ -43,6 +47,17 @@ def arah(menu):
     elif (menu > 6) or (menu < 1) :
         print("masukan anda salah")
         menu()
+##about menu
+
+def about():
+    print("""
+            ================ABOUT==============
+            aplikasi ini dibuat untuk percobaan
+            dalam persiapan untuk pembuatan indo
+            translator
+        """)
+
+##translate menu
     
 def translate(awal, akhir) :
     sunda = {"makan" : "tuang","saya":"abi"}
@@ -75,6 +90,7 @@ def translate(awal, akhir) :
     frase = ' '.join(arrayfrase)
     print(frase)
 
+##kerangka utama
     
 def main():
     menu()
